@@ -26,10 +26,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 """ Highlighting, syntax, etc for various Languages
 Plugin 'fatih/vim-go'
-Plugin 'derekwyatt/vim-scala'
+Plugin 'reasonml-editor/vim-reason'
 Plugin 'mxw/vim-jsx' "Syntax Highlighting for JSX
 Plugin 'pangloss/vim-javascript' "Requirement for mxw/vim-jsx
-Plugin 'leafgarland/typescript-vim' "Syntax Highlighting for typescript
 Plugin 'Yggdroot/indentLine'
 """ Theme / Pretty stuff
 Plugin 'bling/vim-airline' "Awesome looking meta at bottom
