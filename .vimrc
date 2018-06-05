@@ -76,12 +76,6 @@ autocmd FocusGained * call ToggleRelativeOn()
 autocmd InsertEnter * call ToggleRelativeOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
@@ -105,26 +99,6 @@ filetype plugin indent on
 """ MORE AWESOME HOTKEYS
 "
 "
-" Run the q macro
-nnoremap <leader>q @q
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" bind \ (backward slash) to grep shortcut
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
-"Map Ctrl + S to save in any mode
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
-" Also map leader + s
-map <leader>s <C-S>
-
-" Quickly close windows
-nnoremap <leader>x :x<cr>
-nnoremap <leader>X :q<cr>
-
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
@@ -178,3 +152,4 @@ function! InsertTabWrapper()
     endif
 endfunction
 map! <C-c> <Esc>
+map <C-n> :Sex<cr>
