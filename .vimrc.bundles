@@ -2,17 +2,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
-Plug 'reasonml-editor/vim-reason-plus'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+"Plug 'mxw/vim-jsx'
+"Plug 'pangloss/vim-javascript'
+"Plug 'reasonml-editor/vim-reason-plus'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 filetype on
@@ -25,10 +25,8 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
 set background=dark
 colorscheme delek
 
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['ocaml-language-server', '--stdio'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ }
+"let g:jsx_ext_required = 0
+"let g:LanguageClient_serverCommands = {'reason': ['ocaml-language-server', '--stdio'],'ocaml': ['ocaml-language-server', '--stdio']}
 
 "Allow moving around between Tmux windows
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
@@ -40,5 +38,4 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
 
-let g:jsx_ext_required = 0
 set t_RV=
