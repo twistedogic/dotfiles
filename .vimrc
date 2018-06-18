@@ -90,6 +90,10 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 " Load up all of our plugins
+if filereadable(expand("~/.vimrc.plugins"))
+  source ~/.vimrc.plugins
+endif
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif

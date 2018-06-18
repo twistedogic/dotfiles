@@ -1,0 +1,10 @@
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
