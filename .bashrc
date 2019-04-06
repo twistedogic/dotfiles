@@ -1,5 +1,4 @@
 export PATH=$PATH
-export LOCAL_IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
