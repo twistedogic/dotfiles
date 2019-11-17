@@ -7,3 +7,4 @@ alias til="vim +'normal Go' +'r!date' ~/til"
 alias issue="vim +'normal Go' +'r!date' ~/issue"
 alias idea="vim +'normal Go' +'r!date' ~/idea"
 alias blog="vim +'normal Go' +'r!date' ~/blog"
+export PATH=/opt/bin:$PATH
