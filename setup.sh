@@ -26,7 +26,7 @@ echo "...done"
 
 backup() {
   local file=$1
-  if [[ -f "$file" ]]; then
+  if [[ -f ".$file" ]]; then
     mv ~/.$file ~/dotfiles_old/
   fi
 }
