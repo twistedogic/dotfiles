@@ -80,9 +80,6 @@ autocmd InsertLeave * call ToggleRelativeOn()
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
-" Always use vertical diffs
-set diffopt+=vertical
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")

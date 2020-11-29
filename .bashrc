@@ -20,6 +20,7 @@ gitri() {
 }
 
 export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
 alias til="vim +'normal Go' +'r!date' ~/til"
 alias issue="vim +'normal Go' +'r!date' ~/issue"
 alias idea="vim +'normal Go' +'r!date' ~/idea"
