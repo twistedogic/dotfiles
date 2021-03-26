@@ -14,6 +14,9 @@ files="bashrc vimrc vimrc.bundles vimrc.plugins config"    # list of files/folde
 
 git clone https://github.com/twistedogic/dotfiles $dir
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
@@ -45,3 +48,4 @@ if [[ -f ".zshenv" ]]; then
 fi
 
 rm -rf $dir
+vim +PlugInstall +qall
