@@ -1,3 +1,8 @@
+alias gitd="git branch -d"
+alias gits="git status"
+alias gitc="git checkout"
+alias gitp="git pull"
+
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -25,8 +30,5 @@ alias til="vim +'normal Go' +'r!date' ~/til"
 alias issue="vim +'normal Go' +'r!date' ~/issue"
 alias idea="vim +'normal Go' +'r!date' ~/idea"
 alias blog="vim +'normal Go' +'r!date' ~/blog"
-alias gitd="git branch -d"
-alias gits="git status"
-alias gitc="git checkout"
-alias gitp="git pull"
+
 export PATH=/opt/bin:$PATH
