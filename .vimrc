@@ -153,6 +153,7 @@ function! InsertTabWrapper()
     endif
 endfunction
 map! <C-c> <Esc>
+map! jj <Esc>
 map <C-n> :Sex<cr>
 
 if filereadable(expand("~/.vimrc.custom"))
