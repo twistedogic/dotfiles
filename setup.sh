@@ -8,7 +8,7 @@
 
 dir=~/.my_dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vimrc.bundles vimrc.plugins config .tmux.conf"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vimrc.bundles vimrc.plugins config .tmux.conf .profile_alias"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -45,6 +45,11 @@ done
 if [[ -f ".zshenv" ]]; then
   backup zshenv 
   echo "source ~/.bashrc" >> ~/.zshenv
+fi
+
+if [[ -f ".zshrc" ]]; then
+  backup zshrc
+  echo "source ~/.profile_alias" >> ~/.zshrc
 fi
 
 rm -rf $dir
