@@ -139,6 +139,12 @@ augroup vimrcEx
   autocmd FileType css,scss,sass,less setlocal iskeyword+=-
 augroup END
 
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType rust AutoFormatBuffer rustfmt
+augroup END
 
 " Tab completion
 " will insert tab at beginning of line,

@@ -8,4 +8,15 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'prettier/vim-prettier', {
+    \ 'do': 'npm install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'nsf/gocode'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
 call plug#end()
