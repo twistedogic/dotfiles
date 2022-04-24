@@ -16,6 +16,7 @@ Plug 'prettier/vim-prettier', {
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'nsf/gocode'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
