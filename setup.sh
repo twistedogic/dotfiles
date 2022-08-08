@@ -50,6 +50,7 @@ fi
 if [[ -f ".zshrc" ]]; then
   backup zshrc
   echo "source ~/.profile_alias" >> ~/.zshrc
+  echo "source ~/.profile" >> ~/.zshrc
 fi
 
 rm -rf $dir
