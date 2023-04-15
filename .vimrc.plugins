@@ -21,4 +21,5 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'nsf/gocode'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
+Plug 'terrastruct/d2-vim'
 call plug#end()
