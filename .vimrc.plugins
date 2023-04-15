@@ -22,4 +22,5 @@ Plug 'nsf/gocode'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'terrastruct/d2-vim'
+Plug 'evanleck/vim-svelte'
 call plug#end()
