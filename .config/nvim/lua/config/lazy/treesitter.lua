@@ -8,7 +8,8 @@ return {
                 "vimdoc", 
                 "javascript", "typescript", 
                 "c", "lua", "rust",
-                "jsdoc", "bash", "python"
+                "jsdoc", "bash", "python",
+                "nix", "templ",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)

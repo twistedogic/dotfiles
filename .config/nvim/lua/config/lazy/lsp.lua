@@ -30,14 +30,8 @@ return {
                 'gopls',
                 'pyright'
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
-            }
         })
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
         cmp.setup({
             snippet = { 
                 expand = function(args)
@@ -78,5 +72,14 @@ return {
                 prefix = "",
             },
         })
+        local lspconfig = require("lspconfig")
+        local util = require("lspconfig/util")
+
+        lspconfig.gopls.setup {
+            cmd = {"gopls"},
+            capabilities = capabilities,
+            filetypes = {"go", "gomod"},
+            root_dir = util.root_pattern("go.mod"),
+        }
     end
 }
