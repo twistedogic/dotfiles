@@ -36,8 +36,8 @@ return {
 				diagnostics = default_normal,
 			},
 		})
-		vim.keymap.set("n", "<C-n>", builtin.find_files, {})
-		vim.keymap.set("n", "ff", builtin.live_grep, {})
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+		vim.keymap.set("n", "<leader>gg", builtin.live_grep, {})
 		vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
 		vim.keymap.set("n", "<leader>ca", builtin.lsp_incoming_calls, {})
 		vim.keymap.set("n", "<leader>og", builtin.lsp_outgoing_calls, {})
