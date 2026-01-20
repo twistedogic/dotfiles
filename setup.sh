@@ -14,11 +14,11 @@ files="bashrc config tmux.conf profile_alias config/nvim"    # list of files/fol
 
 git clone https://github.com/twistedogic/dotfiles $dir
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [ "$OSTYPE" == "linux-gnu"* ]; then
     sudo apt update
-    sudo apt-get install -y neovim curl build-essential golang-go
+    sudo apt-get install --no-install-recommends -y neovim curl build-essential golang-go
     curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [ "$OSTYPE" == "darwin"* ]; then
     brew install neovim
 fi
 
@@ -47,12 +47,12 @@ for file in $files; do
   cp -r $dir/.$file ~/.$file
 done
 
-if [[ -f ".zshenv" ]]; then
+if [ -f ".zshenv" ]; then
   backup zshenv 
   echo "source ~/.bashrc" >> ~/.zshenv
 fi
 
-if [[ -f ".zshrc" ]]; then
+if [ -f ".zshrc" ]; then
   backup zshrc
   echo "source ~/.profile_alias" >> ~/.zshrc
   echo "source ~/.profile" >> ~/.zshrc
