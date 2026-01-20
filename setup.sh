@@ -8,26 +8,17 @@
 
 dir=~/.my_dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vimrc.bundles vimrc.plugins config tmux.conf profile_alias"    # list of files/folders to symlink in homedir
+files="bashrc config tmux.conf profile_alias config/nvim"    # list of files/folders to symlink in homedir
 
 ##########
 
 git clone https://github.com/twistedogic/dotfiles $dir
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	apt-get install -y neovim
+    apt-get install -y neovim
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  brew install neovim
+    brew install neovim
 fi
-
-curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -66,4 +57,3 @@ if [[ -f ".zshrc" ]]; then
 fi
 
 rm -rf $dir
-nvim +PlugInstall +qall
