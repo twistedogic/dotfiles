@@ -16,7 +16,7 @@ git clone https://github.com/twistedogic/dotfiles $dir
 
 if [ "$OSTYPE" == "linux-gnu"* ]; then
     sudo apt update
-    sudo apt-get install --no-install-recommends -y neovim curl build-essential golang-go
+    sudo apt-get install --no-install-recommends -y nodejs npm neovim curl build-essential golang-go
     curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
 elif [ "$OSTYPE" == "darwin"* ]; then
     brew install neovim
