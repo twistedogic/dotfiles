@@ -15,7 +15,9 @@ files="bashrc config tmux.conf profile_alias config/nvim"    # list of files/fol
 git clone https://github.com/twistedogic/dotfiles $dir
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    apt-get install -y neovim
+    sudo apt update
+    sudo apt-get install -y neovim curl build-essential golang-go
+    curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install neovim
 fi
