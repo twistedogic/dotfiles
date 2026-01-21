@@ -8,8 +8,6 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
-		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
 	},
 	config = function()
@@ -21,23 +19,21 @@ return {
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
+		local lsp_list = {
+			"rust_analyzer",
+			"gopls",
+			"pyright",
+			"bashls",
+			"ts_ls",
+		}
 
 		require("fidget").setup({})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = {
-				"rust_analyzer",
-				"gopls",
-				"pyright",
-			},
+			ensure_installed = lsp_list,
 		})
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		cmp.setup({
-			snippet = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
-				end,
-			},
 			completion = {
 				completeopt = "menu,menuone,noinsert,noselect",
 			},
@@ -56,7 +52,6 @@ return {
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
 			}, {
 				{ name = "buffer" },
 			}),
@@ -72,14 +67,6 @@ return {
 				prefix = "",
 			},
 		})
-		local lspconfig = require("lspconfig")
-		local util = require("lspconfig/util")
-
-		lspconfig.gopls.setup({
-			cmd = { "gopls" },
-			capabilities = capabilities,
-			filetypes = { "go", "gomod" },
-			root_dir = util.root_pattern("go.mod"),
-		})
+		vim.lsp.enable(lsp_list)
 	end,
 }
