@@ -23,6 +23,7 @@ MISE_BIN="$HOME/.local/bin/mise"
 $MISE_BIN use -g node@latest
 $MISE_BIN use -g go@latest
 $MISE_BIN use -g uv@latest
+$MISE_BIN use -g tmux@latest
 $MISE_BIN use -g neovim@0.11.6
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
