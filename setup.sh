@@ -25,6 +25,7 @@ $MISE_BIN use -g go@latest
 $MISE_BIN use -g uv@latest
 $MISE_BIN use -g tmux@latest
 $MISE_BIN use -g neovim@0.11.6
+$MISE_BIN use -g github:charmbracelet/gum
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p "$olddir"
@@ -55,8 +56,7 @@ fi
 
 if [ -f ~/.zshrc ]; then
   backup zshrc
-  echo "source ~/.profile_alias" >> ~/.zshrc
-  echo "source ~/.profile" >> ~/.zshrc
+  echo "source ~/.profile_zsh" >> ~/.zshrc
 fi
 
 case "$OSTYPE" in

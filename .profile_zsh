@@ -1,0 +1,17 @@
+source ~/.profile_alias
+source ~/.profile
+bindkey '^R' history-incremental-search-backward
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info output to display the branch name in cyan
+zstyle ':vcs_info:git:*' formats '%F{cyan}(%b)%f '
+
+# Enable variable substitution in the prompt
+setopt PROMPT_SUBST
+
+# Set your primary prompt string (Current Directory + Git Branch + Prompt Symbol)
+PROMPT='%F{blue}%~%f ${vcs_info_msg_0_}%# '
+
