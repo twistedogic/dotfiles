@@ -19,18 +19,19 @@ return {
 			vim.lsp.protocol.make_client_capabilities(),
 			cmp_lsp.default_capabilities()
 		)
-		local lsp_list = {
+		local install_list = {
 			"rust_analyzer",
 			"gopls",
 			"pyright",
 			"bashls",
 			"ts_ls",
+			"zls",
 		}
 
 		require("fidget").setup({})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = lsp_list,
+			ensure_installed = install_list,
 		})
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		cmp.setup({
@@ -67,6 +68,11 @@ return {
 				prefix = "",
 			},
 		})
+		local lsp_list = {}
+		for i, value in ipairs(install_list) do
+			lsp_list[i] = value
+		end
+		table.insert(lsp_list, "ocamllsp")
 		vim.lsp.enable(lsp_list)
 	end,
 }
