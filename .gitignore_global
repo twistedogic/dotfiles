@@ -1,0 +1,12 @@
+.DS_Store
+.crush/
+.pi/
+.codex/
+.pi-subagents/
+.agents/
+_bmad*
+.vscode/
+.idea/
+*.swp
+.gnhf
+.again

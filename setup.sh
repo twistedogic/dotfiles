@@ -14,6 +14,13 @@ files=("bashrc" "config" "tmux.conf" "profile_alias" "config/nvim")
 
 ##########
 
+if ! command -v git >/dev/null 2>&1; then
+  case "$OSTYPE" in
+    darwin*)  brew install git ;;
+    linux-gnu*) sudo apt-get update && sudo apt-get install -y git ;;
+  esac
+fi
+
 git clone https://github.com/twistedogic/dotfiles "$dir"
 
 curl https://mise.run | sh
@@ -24,8 +31,11 @@ $MISE_BIN use -g node@latest
 $MISE_BIN use -g go@latest
 $MISE_BIN use -g uv@latest
 $MISE_BIN use -g tmux@latest
+$MISE_BIN use -g jq@latest
+$MISE_BIN use -g gh@latest
 $MISE_BIN use -g neovim@0.11.6
 $MISE_BIN use -g github:charmbracelet/gum
+$MISE_BIN use -g aqua:go-task/task@latest
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p "$olddir"
@@ -67,5 +77,16 @@ case "$OSTYPE" in
     echo "eval \"\$(~/.local/bin/mise activate zsh)\"" >> ~/.zshrc
     ;;
 esac
+
+npm i -g --ignore-scripts @earendil-works/pi-coding-agent
+npm i -g @fission-ai/openspec @getpaseo/cli
+
+pi install npm:pi-mcp-adapter
+pi install git:github.com/DietrichGebert/ponytail
+
+curl -fsSL https://pkg.lightpanda.io/install.sh | bash
+
+npx skills add https://github.com/github/awesome-copilot --skill git-commit -g
+npx skills add https://github.com/github/awesome-copilot --skill gh-cli -g
 
 rm -rf "$dir"

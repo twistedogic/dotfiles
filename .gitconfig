@@ -1,5 +1,13 @@
 [user]
-  email = twistedogic@gmail.com
-  name = Jordan Li
-[push]
-  default = simple
+	email = twistedogic@gmail.com
+	name = Jordan Li
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+[core]
+	excludesfile = ~/.gitignore_global
